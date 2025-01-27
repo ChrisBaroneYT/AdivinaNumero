@@ -28,7 +28,7 @@ function verificarIntento() {
     }
     //validar intento y crear un maximo numero de intentos
     if (intentos >= 3) {
-        asignarTextoElemento('h1', '¡Perdiste! ¡Se acabaron los intentos!','red');
+        asignarTextoElemento('h1', `¡Perdiste! ¡Se acabaron tus ${intentos} intentos!`,'red');
         asignarTextoElemento('p', `¡Perdiste! El número secreto era ${numeroSecreto}`, 'red');
         document.getElementById('reiniciar').removeAttribute('disabled');
         return;
