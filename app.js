@@ -52,7 +52,7 @@ function verificarIntento() {
     }
     // Incrementar intentos
     intentos++;
-    console.log(intentos);
+    
     limpiarCaja(); // Limpiar el input para el siguiente intento
 }
 
@@ -84,7 +84,7 @@ function condicionesIniciales() {
     asignarTextoElemento('p', `Indica un número del 1 al ${numeroMaximo}`, 'white');
     numeroSecreto = generarNumeroSecreto();
     intentos = 0;  // Comenzamos desde el intento 1
-    console.log(numeroSecreto);
+    
 }
 // Función para reiniciar el juego
 function reiniciarJuego() {
@@ -100,6 +100,6 @@ function reiniciarJuego() {
     // Inicializar el número de intentos
     // Deshabilitar el botón de nuevo juego
     document.querySelector('#reiniciar').setAttribute('disabled', 'true');
-    console.log(numeroSecreto);
+    
 }
 condicionesIniciales();
