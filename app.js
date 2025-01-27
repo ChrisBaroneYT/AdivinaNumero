@@ -35,7 +35,7 @@ function verificarIntento() {
         return;
     }
     // Verificar si el usuario alcanzó el límite de intentos
-    if (intentos >= 3) {
+    if (intentos >= 2) {
         asignarTextoElemento('h1', `¡Perdiste! ¡Se acabaron tus ${intentos} intentos!`, 'red');
         asignarTextoElemento('p', `¡Perdiste! El número secreto era ${numeroSecreto}`, 'red');
         document.getElementById('reiniciar').removeAttribute('disabled');
@@ -52,6 +52,7 @@ function verificarIntento() {
     }
     // Incrementar intentos
     intentos++;
+    console.log(intentos);
     limpiarCaja(); // Limpiar el input para el siguiente intento
 }
 
