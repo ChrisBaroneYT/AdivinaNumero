@@ -2,7 +2,7 @@ let numeroSecreto = 0;
 let intentos = 0;
 let listaNumerosSorteados = [];
 let numeroMaximo = 10;
-
+// Función para asignar texto a un elemento HTML
 function asignarTextoElemento(elemento, texto, color) {
     let elementoHTML = document.querySelector(elemento);
     elementoHTML.innerHTML = texto;
@@ -16,7 +16,7 @@ document.getElementById('valorUsuario').addEventListener('keypress', function (e
         verificarIntento();
     }
 });
-
+// Función para verificar el intento del usuario
 function verificarIntento() {
     // Obtener el número ingresado por el usuario
     let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value);
@@ -55,11 +55,11 @@ function verificarIntento() {
     limpiarCaja(); // Limpiar el input para el siguiente intento
 }
 
-
+// Función para limpiar la caja de texto
 function limpiarCaja() {
     document.querySelector('#valorUsuario').value = '';
 }
-
+// Función para generar un número aleatorio
 function generarNumeroSecreto() {
     let numeroGenerado = Math.floor(Math.random() * numeroMaximo) + 1;
     // Si ya sorteamos todos los números
@@ -77,7 +77,7 @@ function generarNumeroSecreto() {
        
     }
 }
-
+// Función para establecer las condiciones iniciales del juego
 function condicionesIniciales() {
     asignarTextoElemento('h1', 'Juego del número secreto!', 'white');
     asignarTextoElemento('p', `Indica un número del 1 al ${numeroMaximo}`, 'white');
@@ -85,7 +85,7 @@ function condicionesIniciales() {
     intentos = 0;  // Comenzamos desde el intento 1
     console.log(numeroSecreto);
 }
-
+// Función para reiniciar el juego
 function reiniciarJuego() {
     // Limpiar caja
     limpiarCaja();
@@ -101,5 +101,4 @@ function reiniciarJuego() {
     document.querySelector('#reiniciar').setAttribute('disabled', 'true');
     console.log(numeroSecreto);
 }
-
 condicionesIniciales();
