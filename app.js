@@ -36,7 +36,7 @@ function verificarIntento() {
     }
     // Verificar si el usuario alcanzó el límite de intentos
     if (intentos >= 2) {
-        asignarTextoElemento('h1', `¡Perdiste! ¡Se acabaron tus ${intentos} intentos!`, 'red');
+        asignarTextoElemento('h1', `¡Perdiste! ¡Se acabaron tus intentos!`, 'red');
         asignarTextoElemento('p', `¡Perdiste! El número secreto era ${numeroSecreto}`, 'red');
         document.getElementById('reiniciar').removeAttribute('disabled');
         return;
@@ -84,7 +84,7 @@ function condicionesIniciales() {
     asignarTextoElemento('p', `Indica un número del 1 al ${numeroMaximo}`, 'white');
     numeroSecreto = generarNumeroSecreto();
     intentos = 0;  // Comenzamos desde el intento 1
-    
+    console.log(numeroSecreto);
 }
 // Función para reiniciar el juego
 function reiniciarJuego() {
