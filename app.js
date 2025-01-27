@@ -10,6 +10,13 @@ function asignarTextoElemento(elemento, texto, color) {
     return;
 }
 
+//al oprimir el boton de enter se ejecuta la funcion verificarIntento
+document.getElementById('valorUsuario').addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        verificarIntento();
+    }
+});
+
 function verificarIntento() {
     // Obtener el número ingresado por el usuario
     let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value);
@@ -74,21 +81,19 @@ function condicionesIniciales() {
     asignarTextoElemento('p', `Indica un número del 1 al ${numeroMaximo}`, 'white');
     numeroSecreto = generarNumeroSecreto();
     intentos = 1;  // Comenzamos desde el intento 1
-    console.log(numeroSecreto);
 }
 
 function reiniciarJuego() {
     // Limpiar caja
     limpiarCaja();
     // Reiniciar intentos
-    intentos = 0;
+    intentos = 1;
     // Indicar mensaje de intervalo de números 
     asignarTextoElemento('h1', 'Juego del número secreto!','white');
     asignarTextoElemento('p', `Indica un número del 1 al ${numeroMaximo}`,'white');
     // Generar el número aleatorio
     numeroSecreto = generarNumeroSecreto();
     // Inicializar el número de intentos
-    console.log(numeroSecreto);
     // Deshabilitar el botón de nuevo juego
     document.querySelector('#reiniciar').setAttribute('disabled', 'true');
 }
