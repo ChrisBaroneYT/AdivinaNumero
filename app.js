@@ -32,6 +32,8 @@ function verificarIntento() {
         asignarTextoElemento('h1', '¡Felicidades! ¡Ganaste!', 'green');
         asignarTextoElemento('p', `¡Acertaste el número en ${intentos + 1} ${(intentos + 1 === 1) ? 'Intento' : 'Intentos'}!`, 'green');
         document.getElementById('reiniciar').removeAttribute('disabled');
+        document.getElementById('intento').setAttribute('disabled','true');
+        document.getElementById('valorUsuario').setAttribute('disabled','true');
         return;
     }
     // Verificar si el usuario alcanzó el límite de intentos
@@ -39,6 +41,8 @@ function verificarIntento() {
         asignarTextoElemento('h1', `¡Perdiste! ¡Se acabaron tus intentos!`, 'red');
         asignarTextoElemento('p', `¡Perdiste! El número secreto era ${numeroSecreto}`, 'red');
         document.getElementById('reiniciar').removeAttribute('disabled');
+        document.getElementById('valorUsuario').setAttribute('disabled','true');
+        document.getElementById('intento').setAttribute('disabled','true');
         return;
     }
 
@@ -85,6 +89,7 @@ function condicionesIniciales() {
     numeroSecreto = generarNumeroSecreto();
     intentos = 0;  // Comenzamos desde el intento 1
     console.log(numeroSecreto);
+    
 }
 // Función para reiniciar el juego
 function reiniciarJuego() {
@@ -99,7 +104,11 @@ function reiniciarJuego() {
     numeroSecreto = generarNumeroSecreto();
     // Inicializar el número de intentos
     // Deshabilitar el botón de nuevo juego
-    document.querySelector('#reiniciar').setAttribute('disabled', 'true');
+    document.getElementById('intento').removeAttribute('disabled');
+    document.getElementById('reiniciar').setAttribute('disabled','true')
+    document.getElementById('valorUsuario').removeAttribute('disabled');
+
+    condicionesIniciales();
     
 }
 condicionesIniciales();
