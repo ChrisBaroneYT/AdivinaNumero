@@ -51,6 +51,8 @@ body::before {
 .container__informaciones {
     flex: 1;
     padding: 3rem;
+    min-height: 10rem; /* Ajusta según necesites */
+
 }
 
 .container__boton {
@@ -92,18 +94,23 @@ body::before {
 .container__botones {
     display: flex;
     gap: 2rem;
+    padding: auto;
+    margin: auto;
 }
 
 h1 {
     font-family: 'Chakra Petch', sans-serif;
-    font-size: 4.5rem; /* 72px -> 4.5rem */
-    padding-bottom: 3rem;
+    font-size: 4rem; /* 72px -> 4.5rem */
+    padding-bottom: 2rem;
+    top: -2rem;
+    position: relative;
 }
 
 p,
 button {
     font-family: 'Inter', sans-serif;
 }
+
 
 .texto__parrafo {
     font-size: 2rem; /* 32px -> 2rem */
@@ -152,13 +159,13 @@ button {
     .texto__parrafo {
         font-size: 1.25rem;
         position: relative;
+        top: -2rem;
     }
     h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
     .container__boton {
         font-size: 1rem;
-        padding: 0.5rem 1rem;
     }
 }
 
@@ -166,22 +173,22 @@ button {
     .container{
         overflow: auto;
         width: 75%;
+        position: relative;
+        
     }
     .texto__parrafo {
         font-size: 1.25rem;
-        position: relative;
-        top: -50px; /* Ajusta el valor según necesites */
     }
     h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
-    .container__boton {
-        font-size: 1rem;
-        padding: 0.5rem 1rem;
+    .container__imagen-persona {
+        position: absolute;
+        left: 15rem; /* Centrar horizontalmente */
+        top: 15rem; /* Centrar verticalmente */
     }
-    .container__imagen-persona{
-        right: 10rem;
-        top: 5rem;
+    .container__imagen-persona {
+        transform: translate(-5rem, 0rem);
     }
     .container__input {
         height: 1rem;
